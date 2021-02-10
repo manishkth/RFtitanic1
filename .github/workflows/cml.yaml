@@ -14,5 +14,5 @@ jobs:
           pip install -r requirements.txt
           python plot_permutation_importance.py
           
-          echo "MODEL METRICS"
-          cat Accuracy.txt
+          echo "## MODEL METRICS" > report.md
+          cat Accuracy.txt >> report.md
