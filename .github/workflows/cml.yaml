@@ -16,3 +16,10 @@ jobs:
           
           echo "## MODEL METRICS" > report.md
           cat Accuracy.txt >> report.md
+          
+          echo "## plot" >> report.md
+          cml-publish Random_Forest_Feature_Importances.png --md >> report.md
+          cml-publish Permutation_importance_low_cardinality_feature.png --md >> report.md
+          cml-publish Permutation_importance_high_cardinality_feature.png --md >> report.md
+          
+          cml-send-comment report.md
