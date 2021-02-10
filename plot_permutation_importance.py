@@ -140,7 +140,9 @@ ax.set_yticklabels(feature_names[sorted_idx])
 ax.set_yticks(y_ticks)
 ax.set_title("Random Forest Feature Importances (MDI)")
 fig.tight_layout()
-plt.show()
+plt.savefig("Random_Forest_Feature_Importances.png",dpi=120) 
+plt.close()
+#plt.show()
 
 
 # %%
@@ -159,7 +161,9 @@ ax.boxplot(result.importances[sorted_idx].T,
            vert=False, labels=X_test.columns[sorted_idx])
 ax.set_title("Permutation Importances (test set)")
 fig.tight_layout()
-plt.show()
+plt.savefig("Permutation_importance_low_cardinality_feature.png",dpi=120) 
+plt.close()
+#plt.show()
 
 # %%
 # It is also possible to compute the permutation importances on the training
@@ -177,4 +181,6 @@ ax.boxplot(result.importances[sorted_idx].T,
            vert=False, labels=X_train.columns[sorted_idx])
 ax.set_title("Permutation Importances (train set)")
 fig.tight_layout()
-plt.show()
+plt.savefig("Permutation_importance_high_cardinality_feature.png",dpi=120) 
+plt.close()
+#plt.show()
